@@ -1,0 +1,1118 @@
+
+/* ==========================================
+   K'OOBEN - THE GOURMET RESTAURANT
+   SISTEMA DIGITAL DE PEDIDOS QR
+   DISEÑO COMPLETO
+========================================== */
+
+/* CONFIGURACIÓN GENERAL */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f2ed;
+    color: #403c38;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* ==========================================
+   ENCABEZADO CON FOTOGRAFÍA DEL HOTEL
+========================================== */
+
+.encabezado {
+    position: relative;
+
+    min-height: 320px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 45px 20px;
+
+    text-align: center;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.30),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("hotelakumal01.jpg");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* LOGOTIPO */
+
+.marca {
+    position: relative;
+    z-index: 1;
+
+    color: white;
+
+    text-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.45);
+}
+
+.marca h1 {
+    margin: 0;
+
+    font-family: Georgia, serif;
+    font-size: 72px;
+    font-weight: normal;
+
+    letter-spacing: -3px;
+}
+
+.marca .the {
+    display: block;
+
+    margin-top: -5px;
+
+    font-family: Georgia, serif;
+    font-size: 23px;
+    font-style: italic;
+}
+
+.marca h2 {
+    margin: -4px 0 0;
+
+    font-family: Georgia, serif;
+    font-size: 43px;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.marca p {
+    margin: 8px 0 0;
+
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+
+/* ==========================================
+   CONTENEDOR PRINCIPAL
+========================================== */
+
+main {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: auto;
+    padding: 30px 22px 60px;
+}
+
+/* ==========================================
+   IDIOMA Y MESA
+========================================== */
+
+.panel-superior {
+    display: grid;
+
+    grid-template-columns: 1fr 190px;
+
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.idioma,
+.mesa {
+    background: white;
+
+    border: 1px solid #dedbd4;
+    border-radius: 15px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.04);
+}
+
+.idioma {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.idioma > span {
+    font-size: 14px;
+    color: #625c55;
+}
+
+.botones-idioma {
+    display: flex;
+    gap: 8px;
+}
+
+.botones-idioma button {
+    padding: 11px 15px;
+
+    border: 1px solid #d5d0c7;
+    border-radius: 8px;
+
+    background: #f5f3ef;
+    color: #534c45;
+
+    cursor: pointer;
+}
+
+.botones-idioma button:hover {
+    border-color: #91ad65;
+}
+
+.botones-idioma .idioma-activo {
+    background: #819d54;
+
+    border-color: #819d54;
+
+    color: white;
+}
+
+/* NÚMERO DE MESA */
+
+.mesa {
+    text-align: center;
+}
+
+.etiqueta-mesa {
+    display: block;
+
+    font-size: 11px;
+    letter-spacing: 3px;
+
+    color: #78974d;
+}
+
+.mesa strong {
+    display: block;
+
+    margin: 5px 0;
+
+    font-family: Georgia, serif;
+    font-size: 39px;
+}
+
+.mesa p {
+    margin: 0;
+
+    color: #827b73;
+    font-size: 12px;
+}
+
+/* ==========================================
+   PANTALLA DE BIENVENIDA
+========================================== */
+
+.inicio-pedido {
+    max-width: 700px;
+
+    margin: 35px auto 65px;
+    padding: 50px 35px;
+
+    background: white;
+
+    border: 1px solid #dedbd4;
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.06);
+}
+
+.inicio-icono {
+    font-size: 35px;
+    color: #8cae50;
+}
+
+.inicio-pedido h2 {
+    margin: 18px 0;
+
+    font-family: Georgia, serif;
+    font-size: 36px;
+    font-weight: normal;
+
+    color: #60554e;
+}
+
+.inicio-pedido > p {
+    color: #77716b;
+    line-height: 1.7;
+}
+
+/* ==========================================
+   SELECTOR DE PERSONAS
+========================================== */
+
+.selector-personas {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 35px;
+    margin: 40px 0;
+}
+
+.selector-personas button {
+    width: 55px;
+    height: 55px;
+
+    border: 1px solid #b8c99a;
+    border-radius: 50%;
+
+    background: #f1f6e8;
+    color: #71943b;
+
+    font-size: 29px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.selector-personas button:hover {
+    background: #88a957;
+    color: white;
+}
+
+.selector-personas button:active {
+    transform: scale(0.95);
+}
+
+.numero-personas {
+    min-width: 110px;
+}
+
+.numero-personas strong {
+    display: block;
+
+    font-family: Georgia, serif;
+    font-size: 62px;
+    font-weight: normal;
+
+    color: #48413b;
+}
+
+.numero-personas span {
+    display: block;
+
+    color: #81796f;
+    font-size: 14px;
+}
+
+.explicacion-inicio {
+    margin-bottom: 30px;
+}
+
+.boton-continuar {
+    width: 100%;
+    max-width: 350px;
+
+    padding: 17px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #829f51;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.boton-continuar:hover {
+    background: #6f8b40;
+}
+
+/* ==========================================
+   BARRA DE COMENSALES
+========================================== */
+
+.barra-pedido {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 20px;
+    margin-bottom: 18px;
+
+    background: white;
+
+    border: 1px solid #dedbd4;
+    border-radius: 14px;
+}
+
+.barra-pedido span {
+    display: block;
+
+    color: #819d54;
+
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.barra-pedido strong {
+    display: block;
+
+    margin-top: 5px;
+
+    font-family: Georgia, serif;
+    font-size: 32px;
+}
+
+.barra-pedido button {
+    padding: 12px 15px;
+
+    border: 1px solid #d0c9bf;
+    border-radius: 8px;
+
+    background: #f5f3ef;
+    color: #61594f;
+
+    cursor: pointer;
+}
+
+.barra-pedido button:hover {
+    background: #e9eee0;
+    border-color: #a8bc86;
+}
+
+/* ==========================================
+   NAVEGACIÓN DEL MENÚ
+========================================== */
+
+.categorias {
+    position: sticky;
+
+    top: 0;
+    z-index: 20;
+
+    display: flex;
+
+    gap: 10px;
+
+    overflow-x: auto;
+
+    padding: 14px;
+    margin-bottom: 35px;
+
+    background: rgba(250, 248, 244, 0.97);
+
+    border: 1px solid #e0dcd5;
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.05);
+
+    scrollbar-width: none;
+}
+
+.categorias::-webkit-scrollbar {
+    display: none;
+}
+
+.categorias a {
+    flex: 0 0 auto;
+
+    padding: 11px 17px;
+
+    border: 1px solid #d8d2c8;
+    border-radius: 30px;
+
+    background: white;
+    color: #5d554c;
+
+    text-decoration: none;
+    font-size: 13px;
+
+    transition: 0.2s;
+}
+
+.categorias a:hover {
+    background: #829f51;
+
+    border-color: #829f51;
+
+    color: white;
+}
+
+/* ==========================================
+   SECCIONES DEL MENÚ
+========================================== */
+
+.seccion-menu {
+    scroll-margin-top: 95px;
+
+    margin-bottom: 50px;
+}
+
+.titulo-seccion {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #d6d0c6;
+}
+
+.icono-seccion {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 49px;
+    height: 49px;
+
+    border: 1px solid #9bb874;
+    border-radius: 50%;
+
+    color: #8aa855;
+
+    font-size: 25px;
+}
+
+.numero-seccion {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: #aaa096;
+}
+
+.titulo-seccion h2 {
+    margin: 4px 0;
+
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: normal;
+
+    color: #62574f;
+}
+
+/* CONTADOR DE CATEGORÍA */
+
+.contador-categoria {
+    margin: 5px 0 0;
+
+    color: #817a72;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.contador-categoria.categoria-completa {
+    color: #648b35;
+}
+
+/* ==========================================
+   TARJETAS DE PLATILLOS
+========================================== */
+
+.lista-productos {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+.producto {
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 220px;
+
+    padding: 23px;
+
+    background: white;
+
+    border: 1px solid #ded9d1;
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.04);
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+.producto:hover {
+    border-color: #9db878;
+
+    box-shadow:
+        0 8px 23px rgba(0, 0, 0, 0.07);
+}
+
+.producto-categoria {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #8ba85b;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.producto h3 {
+    margin: 0 0 12px;
+
+    font-family: Georgia, serif;
+
+    font-size: 19px;
+    font-weight: normal;
+
+    line-height: 1.35;
+
+    color: #403a34;
+}
+
+.producto-descripcion {
+    flex: 1;
+
+    margin: 0 0 18px;
+
+    color: #77716a;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   ETIQUETAS DIETÉTICAS
+========================================== */
+
+.etiquetas {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-bottom: 16px;
+}
+
+.etiqueta {
+    padding: 6px 10px;
+
+    border: 1px solid #b9c99f;
+    border-radius: 20px;
+
+    background: #f2f7ea;
+
+    color: #698b3d;
+
+    font-size: 10px;
+}
+
+/* ==========================================
+   CONTROLES DE CANTIDAD
+========================================== */
+
+.control {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 14px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #e5e0d8;
+}
+
+.control button {
+    width: 41px;
+    height: 41px;
+
+    border: 1px solid #c8d5b3;
+    border-radius: 50%;
+
+    background: #f2f6ec;
+    color: #678d3d;
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.control button:hover:not(:disabled) {
+    background: #829f51;
+
+    color: white;
+}
+
+.control button:disabled {
+    opacity: 0.3;
+
+    cursor: not-allowed;
+}
+
+.cantidad-producto {
+    min-width: 25px;
+
+    text-align: center;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    color: #403a34;
+}
+
+/* ==========================================
+   INFORMACIÓN DEL RESTAURANTE
+========================================== */
+
+.informacion {
+    margin: 30px 0 45px;
+
+    padding: 30px;
+
+    background: white;
+
+    border: 1px solid #ded9d1;
+    border-radius: 16px;
+
+    text-align: center;
+}
+
+.pregunta-postres {
+    font-family: Georgia, serif;
+
+    font-size: 19px;
+
+    color: #62574f;
+}
+
+.experiencia {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    margin: 25px 0;
+
+    color: #b15e56;
+}
+
+.experiencia p {
+    margin: 0;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+}
+
+.aviso {
+    margin: 0;
+
+    color: #999087;
+
+    font-size: 11px;
+}
+
+/* ==========================================
+   RESUMEN DEL PEDIDO
+========================================== */
+
+.carrito {
+    scroll-margin-top: 95px;
+
+    padding: 30px;
+
+    background: #373a32;
+
+    border: 1px solid #4e5644;
+    border-radius: 20px;
+
+    color: white;
+}
+
+.carrito-encabezado {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid #60665b;
+}
+
+.carrito-mini {
+    color: #bbce9e;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.carrito h2 {
+    margin: 5px 0 0;
+
+    font-family: Georgia, serif;
+
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.mesa-carrito {
+    text-align: right;
+
+    font-size: 12px;
+
+    color: #d1d6c9;
+}
+
+.mesa-carrito strong {
+    display: block;
+
+    font-family: Georgia, serif;
+
+    font-size: 32px;
+
+    color: white;
+}
+
+/* PERSONAS */
+
+.personas-resumen {
+    margin: 20px 0;
+
+    color: #c9dab2;
+
+    font-size: 14px;
+}
+
+/* PLATILLOS SELECCIONADOS */
+
+.lista-pedido {
+    margin-bottom: 25px;
+}
+
+.grupo-resumen {
+    padding: 15px 0;
+
+    border-bottom: 1px solid #5b6355;
+}
+
+.grupo-resumen h3 {
+    margin: 0 0 12px;
+
+    font-family: Georgia, serif;
+
+    font-size: 19px;
+    font-weight: normal;
+
+    color: #c4d9a5;
+}
+
+.pedido-vacio {
+    color: #b8beb2;
+
+    font-size: 13px;
+}
+
+.item-carrito {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 9px 0;
+
+    font-size: 14px;
+}
+
+.item-carrito strong {
+    color: #c4d9a5;
+}
+
+/* ==========================================
+   OBSERVACIONES
+========================================== */
+
+.observaciones {
+    margin-top: 25px;
+}
+
+.observaciones label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.observaciones textarea {
+    width: 100%;
+
+    padding: 15px;
+
+    border: 1px solid #6c7465;
+    border-radius: 10px;
+
+    background: #292e28;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    resize: vertical;
+}
+
+.observaciones textarea:focus {
+    outline: 2px solid #a4bf7d;
+}
+
+.observaciones textarea::placeholder {
+    color: #b3b8ae;
+}
+
+/* ==========================================
+   BOTÓN WHATSAPP
+========================================== */
+
+.whatsapp {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+
+    margin-top: 18px;
+    padding: 17px 20px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #789c50;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.whatsapp:hover {
+    background: #88ac5c;
+}
+
+.whatsapp span {
+    font-weight: bold;
+}
+
+.whatsapp small {
+    font-size: 12px;
+}
+
+/* ==========================================
+   PIE DE PÁGINA
+========================================== */
+
+footer {
+    padding: 60px 15px 15px;
+
+    text-align: center;
+}
+
+.adorno-footer {
+    margin-bottom: 15px;
+
+    color: #92ae69;
+
+    font-size: 30px;
+}
+
+.marca-footer strong {
+    display: block;
+
+    font-family: Georgia, serif;
+
+    font-size: 37px;
+    font-weight: normal;
+
+    color: #62574f;
+}
+
+.marca-footer span {
+    display: block;
+
+    font-family: Georgia, serif;
+
+    font-size: 19px;
+    font-style: italic;
+
+    color: #8c7e73;
+}
+
+.marca-footer small {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #9c9186;
+}
+
+footer p {
+    margin-top: 22px;
+
+    color: #a39b92;
+
+    font-size: 11px;
+}
+
+/* ==========================================
+   TABLETAS
+========================================== */
+
+@media (max-width: 700px) {
+
+    .encabezado {
+        min-height: 250px;
+    }
+
+    .marca h1 {
+        font-size: 58px;
+    }
+
+    .marca h2 {
+        font-size: 36px;
+    }
+
+    .panel-superior {
+        grid-template-columns: 1fr;
+    }
+
+    .idioma {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .lista-productos {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ==========================================
+   CELULARES
+========================================== */
+
+@media (max-width: 480px) {
+
+    main {
+        padding: 16px 12px 45px;
+    }
+
+    .encabezado {
+        min-height: 215px;
+
+        padding: 35px 15px;
+    }
+
+    .marca h1 {
+        font-size: 51px;
+    }
+
+    .marca h2 {
+        font-size: 31px;
+    }
+
+    .inicio-pedido {
+        padding: 35px 18px;
+
+        margin: 20px auto 45px;
+    }
+
+    .inicio-pedido h2 {
+        font-size: 28px;
+    }
+
+    .selector-personas {
+        gap: 20px;
+    }
+
+    .categorias {
+        margin-left: -12px;
+        margin-right: -12px;
+
+        border-radius: 0;
+    }
+
+    .producto {
+        padding: 20px;
+    }
+
+    .barra-pedido {
+        padding: 15px;
+    }
+
+    .carrito {
+        padding: 20px;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 26px;
+    }
+
+    .experiencia {
+        gap: 8px;
+    }
+
+}
